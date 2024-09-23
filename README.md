@@ -66,9 +66,10 @@ database_name = "<<your database name>>"
 database_id = "<<your database id>>"
 ```
 
-Install Drizzle ORM and Drizzle Kit. We'll use it later.
+Install Lucia, Drizzle ORM and Drizzle Kit. We'll use it later.
 
 ```bash
+npm i lucia
 npm i drizzle-orm
 npm i -D drizzle-kit
 ```
