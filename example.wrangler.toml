@@ -1,0 +1,11 @@
+name = "astro-cloudflare-lucia"
+pages_build_output_dir = "./dist"
+
+compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2024-09-23"
+
+[[d1_databases]]
+binding = "DB"                           # i.e. available in your Worker on env.DB
+database_name = "astro-cloudflare-lucia"
+database_id = "<<your-database-id>>"
+migrations_dir = "./src/db/migrations"

@@ -7,11 +7,23 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "astro build && wrangler pages deploy ./dist",
+    "db:generate": "drizzle-kit generate --dialect=sqlite --schema=./src/db/schema.ts --out=./src/db/migrations",
+    "db:migrate:local": "wrangler d1 migrations apply astro-cloudflare-lucia --local",
+    "db:migrate:remote": "wrangler d1 migrations apply astro-cloudflare-lucia --remote"
   },
   "dependencies": {
-    "astro": "^4.15.8",
     "@astrojs/check": "^0.9.3",
+    "@astrojs/cloudflare": "^11.1.0",
+    "@lucia-auth/adapter-drizzle": "^1.1.0",
+    "arctic": "^1.9.2",
+    "astro": "^4.15.8",
+    "drizzle-orm": "^0.33.0",
+    "lucia": "^3.2.0",
     "typescript": "^5.6.2"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.24.2"
   }
 }
